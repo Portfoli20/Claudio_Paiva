@@ -6,8 +6,14 @@ function activateFullscreen() {
     fullscreenActivated = true;
     
     const docEl = document.documentElement;
+    console.log('Tentando ativar tela cheia...');
+    
     if (docEl.requestFullscreen) {
-        docEl.requestFullscreen().catch(() => {});
+        docEl.requestFullscreen().then(() => {
+            console.log('Tela cheia ativada!');
+        }).catch((err) => {
+            console.log('Erro ao ativar tela cheia:', err);
+        });
     } else if (docEl.webkitRequestFullscreen) {
         docEl.webkitRequestFullscreen();
     } else if (docEl.msRequestFullscreen) {
