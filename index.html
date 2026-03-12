@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Portfólio de Claudio Paiva - Desenvolvedor e Profissional de PCP">
+    <title>Claudio Paiva | Portfólio</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Foli.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <div class="scroll-progress-bar" id="scroll-progress"></div>
+    
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    
+    <div class="loading-screen" id="loading-screen">
+        <div class="loader"></div>
+    </div>
+    
+    <div class="cursor-glow" id="cursor-glow"></div>
+    
+    <div class="scroll-progress"></div>
+    <div class="loading"></div>
+    
+    <header>
+        <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#home" data-tooltip="Início">CP</a>
+                <button class="navbar-toggler" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projetos">Projetos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sobre-mim">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contatos">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+                    <span class="theme-toggle-inner">
+                        <span class="theme-icon-sun">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </span>
+                        <span class="theme-icon-moon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                        </span>
+                    </span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-gradient"></div>
+            <div class="hero-particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            <div class="container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-6 text-center text-lg-left mb-4 mb-lg-0 fade-in">
+                        <h1 class="display-4 mb-4 glitch-text">Olá, eu sou<br><span class="highlight typewriter-text" id="typewriter">Claudio Paiva</span></h1>
+                        <p class="lead mb-4 cyber-text">Desenvolvedor Web & Profissional de PCP</p>
+                        <div class="hero-buttons">
+                            <a href="#projetos" class="btn btn-primary btn-cyber">Ver Projetos</a>
+                            <a href="#contatos" class="btn btn-outline-light btn-cyber">Contato</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 fade-in">
+                        <div class="text-center">
+                            <img src="Foto.Claudio.png" alt="Claudio Paiva" class="hero-image img-fluid avatar-circle">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-down-arrow" onclick="document.getElementById('videos-destaque').scrollIntoView({behavior: 'smooth'})">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="stat-card fade-in">
+                            <i class="fas fa-briefcase stat-icon"></i>
+                            <div class="stat-number" data-target="3">0</div>
+                            <div class="stat-label">Anos de Experiência</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="stat-card fade-in">
+                            <i class="fas fa-project-diagram stat-icon"></i>
+                            <div class="stat-number" data-target="15">0</div>
+                            <div class="stat-label">Projetos Realizados</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="stat-card fade-in">
+                            <i class="fas fa-code stat-icon"></i>
+                            <div class="stat-number" data-target="12">0</div>
+                            <div class="stat-label">Tecnologias</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="stat-card fade-in">
+                            <i class="fas fa-certificate stat-icon"></i>
+                            <div class="stat-number" data-target="5">0</div>
+                            <div class="stat-label">Certificações</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="videos-destaque" class="videos-showcase">
+            <div class="container">
+                <h2 class="section-title text-center mb-4 fade-in">Projetos em Ação</h2>
+                <p class="text-center mb-5 fade-in section-subtitle">Veja alguns dos meus projetos em funcionamento. Clique em qualquer vídeo para ver os detalhes completos.</p>
+                
+                <div class="video-wall">
+                    <div class="video-wall-main">
+                        <video id="main-video" src="Hector Albertazzi - Movimentações Industrial - Opera 2026-03-02 15-56-10.mp4" autoplay muted loop playsinline></video>
+                        <button class="video-expand-btn" id="expand-main-video" aria-label="Expandir vídeo">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                        <div class="video-wall-info">
+                            <h3 id="main-video-title">Sistema Industrial</h3>
+                            <p id="main-video-desc">Sistema de controle industrial desenvolvido para otimização de processos produtivos.</p>
+                            <button class="btn btn-cyber" id="view-project-btn">Ver projeto completo</button>
+                        </div>
+                    </div>
+                    
+                    <div class="video-wall-side">
+                        <div class="video-thumb active" data-video="Hector Albertazzi - Movimentações Industrial - Opera 2026-03-02 15-56-10.mp4" data-title="Sistema Industrial" data-desc="Sistema de controle industrial desenvolvido para otimização de processos produtivos.">
+                            <video src="Hector Albertazzi - Movimentações Industrial - Opera 2026-03-02 15-56-10.mp4" muted loop playsinline></video>
+                            <span class="video-label">Sistema Industrial</span>
+                        </div>
+                        <div class="video-thumb" data-video="10-45-38.mp4" data-title="Jogo da Cobrinha" data-desc="Implementação do clássico jogo da cobrinha em Python com lógica de movimentação e colisões.">
+                            <video src="10-45-38.mp4" muted loop playsinline></video>
+                            <span class="video-label">Jogo da Cobrinha</span>
+                        </div>
+                        <div class="video-thumb" data-video="10-54-51.mp4" data-title="Sistema de Inventário" data-desc="Sistema de controle de inventário desenvolvido para gestão de estoque e materiais.">
+                            <video src="10-54-51.mp4" muted loop playsinline></video>
+                            <span class="video-label">Inventário</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="projects">
+            <div class="container">
+                <h2 class="section-title text-center mb-5 fade-in">Meus Projetos</h2>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="project-card cyber-card">
+                            <div class="card-glitch-effect"></div>
+                            <img src="Ra_logo_loguin.png" class="card-img-top" alt="Dashboards PCP">
+                            <div class="card-body">
+                                <h5 class="card-title neon-text">Dashboards PCP</h5>
+                                <p class="card-text">Sistema de indicadores para o setor de PCP, desenvolvido para otimizar o controle de produção.</p>
+                                <div class="tech-stack">
+                                    <span class="badge badge-cyber">HTML</span>
+                                    <span class="badge badge-cyber">JavaScript</span>
+                                    <span class="badge badge-cyber">CSS</span>
+                                    <span class="badge badge-cyber">Excel</span>
+                                    <span class="badge badge-cyber">Power BI</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="#" target="_blank" class="btn btn-sm btn-cyber">Ver projeto</a>
+                                    <a href="#" target="_blank" class="btn btn-sm btn-cyber">Código</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="project-card cyber-card">
+                            <div class="card-glitch-effect"></div>
+                            <img src="Home page (2).png" class="card-img-top" alt="Apresentações Espro">
+                            <div class="card-body">
+                                <h5 class="card-title neon-text">Apresentações Espro</h5>
+                                <p class="card-text">Slider rotativo para apresentações institucionais, com interface moderna e responsiva.</p>
+                                <div class="tech-stack">
+                                    <span class="badge badge-cyber">HTML</span>
+                                    <span class="badge badge-cyber">CSS</span>
+                                    <span class="badge badge-cyber">JavaScript</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="#" target="_blank" class="btn btn-sm btn-cyber">Ver projeto</a>
+                                    <a href="#" target="_blank" class="btn btn-sm btn-cyber">Código</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="project-card cyber-card">
+                            <div class="card-glitch-effect"></div>
+                            <img src="Tela de compra (1).png" class="card-img-top" alt="E-commerce Gamers">
+                            <div class="card-body">
+                                <h5 class="card-title neon-text">E-commerce Gamers</h5>
+                                <p class="card-text">Plataforma de e-commerce especializada em periféricos para gamers.</p>
+                                <div class="tech-stack">
+                                    <span class="badge badge-cyber">HTML</span>
+                                    <span class="badge badge-cyber">CSS</span>
+                                    <span class="badge badge-cyber">JavaScript</span>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="#" target="_blank" class="btn btn-sm btn-cyber">Ver projeto</a>
+                                    <a href="#" target="_blank" class="btn btn-sm btn-cyber">Código</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="toggle-projects-btn" class="btn btn-cyber d-block mx-auto mt-2" data-toggle="collapse" data-target="#more-projects" aria-expanded="false" aria-controls="more-projects">Ver mais projetos</button>
+
+                <div id="more-projects" class="collapse mt-4">
+                    <div class="row">
+                        
+
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="project-card cyber-card">
+                                <div class="card-glitch-effect"></div>
+                                <video class="card-img-top" src="10-45-38.mp4" controls preload="metadata" playsinline></video>
+                                <div class="card-body">
+                                    <h5 class="card-title neon-text">Jogo da Cobrinha (Python)</h5>
+                                    <p class="card-text">Implementação do clássico jogo da cobrinha em Python, com lógica de movimentação, crescimento da cobra, colisões e contagem de pontuação. O vídeo demonstra o funcionamento do jogo em tempo real.</p>
+                                    <div class="tech-stack">
+                                        <span class="badge badge-cyber">Python</span>
+                                        <span class="badge badge-cyber">Lógica de Jogo</span>
+                                    </div>
+                                    <div class="project-actions">
+                                        <a href="10-45-38.mp4" target="_blank" class="btn btn-sm btn-cyber">Assistir vídeo</a>
+                                        <a href="#" target="_blank" class="btn btn-sm btn-cyber">Código</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="project-card cyber-card">
+                                <div class="card-glitch-effect"></div>
+                                <video class="card-img-top" src="10-54-51.mp4" controls preload="metadata" playsinline></video>
+                                <div class="card-body">
+                                    <h5 class="card-title neon-text">Inventário Python (Front + Back)</h5>
+                                    <p class="card-text">Aplicação de inventário com front-end e back-end em Python. Roda um servidor em Python, coleta os dados de inventário e transmite diretamente para uma planilha online para consolidação e acompanhamento.</p>
+                                    <div class="tech-stack">
+                                        <span class="badge badge-cyber">Python</span>
+                                        <span class="badge badge-cyber">Servidor</span>
+                                        <span class="badge badge-cyber">Planilha Online</span>
+                                    </div>
+                                    <div class="project-actions">
+                                        <a href="10-54-51.mp4" target="_blank" class="btn btn-sm btn-cyber">Assistir vídeo</a>
+                                        <a href="#" target="_blank" class="btn btn-sm btn-cyber">Código</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="project-card cyber-card">
+                                <div class="card-glitch-effect"></div>
+                                <video class="card-img-top" src="Hector Albertazzi - Movimentações Industrial - Opera 2026-03-02 15-56-10.mp4" controls preload="metadata" playsinline></video>
+                                <div class="card-body">
+                                    <h5 class="card-title neon-text">Sistema de Produção e PCP (Opera)</h5>
+                                    <p class="card-text">Demonstração de movimentações industriais no sistema Opera, com foco em rotina de chão de fábrica e apontamentos ligados a PCP. Feito com Opera (Sistema de Produção) + processos de PCP.</p>
+                                    <div class="tech-stack">
+                                        <span class="badge badge-cyber">Sistema de Produção</span>
+                                        <span class="badge badge-cyber">PCP</span>
+                                        <span class="badge badge-cyber">Opera</span>
+                                    </div>
+                                    <div class="project-actions">
+                                        <a href="Hector Albertazzi - Movimentações Industrial - Opera 2026-03-02 15-56-10.mp4" target="_blank" class="btn btn-sm btn-cyber">Assistir vídeo</a>
+                                        <a href="#" target="_blank" class="btn btn-sm btn-cyber">Código</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre-mim" class="about fade-in">
+            <div class="container">
+                <h2 class="section-title mb-4">Sobre mim</h2>
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <p class="lead mb-4">Profissional em desenvolvimento com experiência em PCP e tecnologia.</p>
+                        <p>Com 22 anos de idade e nascido em Diadema, tenho 3 anos de experiência em PCP e hoje atuo como Analista Júnior de PCP. Minha paixão está na intersecção entre o Planejamento e Controle de Produção e a tecnologia.</p>
+                        <div class="mt-3 mb-4">
+                            <a href="curriculum_Claudio Paiva (2).pdf" target="_blank" class="btn btn-cyber">
+                                <i class="fas fa-file-pdf mr-2"></i>Baixar Currículo
+                            </a>
+                        </div>
+                        
+                        <div class="timeline mt-5">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2026</div>
+                                    <h5 class="timeline-title">Analista Júnior de PCP</h5>
+                                    <p class="timeline-text">Atuação em planejamento e controle de produção com foco em indicadores e automação.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2024 - 2025</div>
+                                    <h5 class="timeline-title">Assistente de PCP</h5>
+                                    <p class="timeline-text">Desenvolvimento de dashboards e relatórios para controle de produção.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">2023 - 2024</div>
+                                    <h5 class="timeline-title">Aprendiz de PCP</h5>
+                                    <p class="timeline-text">Início da carreira em PCP, aprendendo processos e sistemas de produção.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <h4 class="mb-4 neon-text"><i class="fas fa-code mr-2"></i>Habilidades Técnicas</h4>
+                        <div class="skills-progress">
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name"><i class="fab fa-react"></i> React / TypeScript</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name"><i class="fab fa-node-js"></i> Node.js / Express</span>
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name"><i class="fas fa-database"></i> PostgreSQL / Supabase</span>
+                                    <span class="skill-percent">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name"><i class="fab fa-python"></i> Python</span>
+                                    <span class="skill-percent">70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="70"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name"><i class="fas fa-chart-bar"></i> Power BI</span>
+                                    <span class="skill-percent">100%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="100"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name"><i class="fas fa-file-excel"></i> Excel</span>
+                                    <span class="skill-percent">100%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="100"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-header">
+                                    <span class="skill-name"><i class="fas fa-industry"></i> PCP / Produção</span>
+                                    <span class="skill-percent">100%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4 class="mt-5 mb-3 neon-text"><i class="fas fa-tools mr-2"></i>Outras Tecnologias</h4>
+                        <div class="skill-tags">
+                            <span class="badge badge-cyber">Tailwind CSS</span>
+                            <span class="badge badge-cyber">shadcn/ui</span>
+                            <span class="badge badge-cyber">JWT</span>
+                            <span class="badge badge-cyber">Prisma</span>
+                            <span class="badge badge-cyber">Zod</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contatos" class="contact fade-in">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Vamos Conversar?</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="contact-info text-center mb-5">
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt mb-2"></i>
+                                <p>(11) 99234-2451</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <a href="http://wa.me/551192342451" class="whatsapp-btn" target="_blank" data-tooltip="Fale comigo no WhatsApp!">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer class="footer-improved">
+        <div class="container">
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/claudio-paiva-059b5626a/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/vvdoido" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/claudio.paiva99/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dinho.remi@gmail.com" target="_blank" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <div class="text-center">
+                <p class="mb-2 cyber-text">&copy; 2026 Claudio Paiva. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="preview-overlay" class="preview-overlay" aria-hidden="true">
+        <div class="preview-dialog" role="dialog" aria-modal="true">
+            <button class="preview-close" aria-label="Fechar">&times;</button>
+            <h3 class="preview-title"></h3>
+            <div class="preview-body">
+                <video controls playsinline></video>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="Foli.js"></script>
+</body>
+</html>
