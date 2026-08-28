@@ -349,25 +349,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-   
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-
-    navbarToggler.addEventListener('click', function() {
-        const isExpanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !isExpanded);
-        navbarCollapse.classList.toggle('show');
-    });
-
-   
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            navbarCollapse.classList.remove('show');
-            navbarToggler.setAttribute('aria-expanded', 'false');
-        });
-    });
-
-  
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
