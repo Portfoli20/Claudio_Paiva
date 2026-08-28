@@ -97,3 +97,10 @@ html[data-theme="light"] .video-stage-label { background:rgba(255,255,255,.77); 
     .project-status { top:.75rem; left:.75rem; }
     .video-wall-info .project-status { margin-bottom:.55rem; }
 }
+
+/* Stable theme control: avoids competing one-second transitions during page load and rapid taps. */
+.theme-toggle { transition:background .32s ease,border-color .32s ease,box-shadow .32s ease,transform .2s ease!important; }
+.theme-toggle-inner { transition:left .34s cubic-bezier(.2,.8,.2,1)!important; }
+.theme-icon-moon,.theme-icon-sun { transition:opacity .22s ease,transform .34s cubic-bezier(.2,.8,.2,1)!important; }
+.theme-toggle.is-switching { pointer-events:none; }
+@media(prefers-reduced-motion:reduce) { .theme-toggle,.theme-toggle-inner,.theme-icon-moon,.theme-icon-sun { transition:none!important; } }

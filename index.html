@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Portfólio de Claudio Paiva - Desenvolvedor e Profissional de PCP">
     <title>Claudio Paiva | Portfólio</title>
+    <script>
+        // Aplica a preferência antes dos estilos carregarem, evitando piscar no tema errado.
+        try {
+            document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') === 'light' ? 'light' : 'dark');
+        } catch (error) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
@@ -53,7 +61,7 @@
                         </li>
                     </ul>
                 </div>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar tema" aria-pressed="false">
                     <span class="theme-toggle-inner">
                         <span class="theme-icon-sun">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

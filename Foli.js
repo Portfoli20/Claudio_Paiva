@@ -433,11 +433,29 @@ document.addEventListener('DOMContentLoaded', function() {
 (function() {
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
-    
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    if (savedTheme === 'light') {
-        html.setAttribute('data-theme', 'light');
+    let isSwitchingTheme = false;
+    const getTheme = () => html.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+
+    function updateNavbar(theme) {
+        const navbar = document.querySelector('.custom-navbar');
+        if (!navbar) return;
+        const isLight = theme === 'light';
+        navbar.style.background = window.scrollY > 50
+            ? (isLight ? 'rgba(240, 244, 248, 0.98)' : 'rgba(10, 10, 10, 0.98)')
+            : (isLight ? 'rgba(232, 238, 245, 0.95)' : 'rgba(10, 10, 10, 0.95)');
     }
+
+    function applyTheme(theme, persist = false) {
+        html.setAttribute('data-theme', theme);
+        if (themeToggle) themeToggle.setAttribute('aria-pressed', String(theme === 'light'));
+        if (persist) {
+            try { localStorage.setItem('theme', theme); } catch (error) { /* preferência indisponível */ }
+        }
+        updateNavbar(theme);
+    }
+
+    // O tema já é definido no <head>; esta chamada apenas sincroniza os controles.
+    applyTheme(getTheme());
     
     function createFallingStars() {
         if (!themeToggle) return;
@@ -519,7 +537,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (themeToggle) {
         themeToggle.addEventListener('click', function(e) {
-            const currentTheme = html.getAttribute('data-theme');
+            if (isSwitchingTheme) return;
+            isSwitchingTheme = true;
+            themeToggle.classList.add('is-switching');
+
+            const currentTheme = getTheme();
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             
             const rect = themeToggle.getBoundingClientRect();
@@ -531,28 +553,13 @@ document.addEventListener('DOMContentLoaded', function() {
             
             createWaveEffect(x, y, newTheme === 'light' ? 'light' : 'dark');
             
-            html.classList.add('theme-transitioning');
-            
+            applyTheme(newTheme, true);
+            createFallingStars();
+
             setTimeout(() => {
-                html.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-                
-                createFallingStars();
-                
-                const navbar = document.querySelector('.custom-navbar');
-                if (navbar) {
-                    const isLight = newTheme === 'light';
-                    if (window.scrollY > 50) {
-                        navbar.style.background = isLight ? 'rgba(240, 244, 248, 0.98)' : 'rgba(10, 10, 10, 0.98)';
-                    } else {
-                        navbar.style.background = isLight ? 'rgba(232, 238, 245, 0.95)' : 'rgba(10, 10, 10, 0.95)';
-                    }
-                }
-            }, 100);
-            
-            setTimeout(() => {
-                html.classList.remove('theme-transitioning');
-            }, 800);
+                isSwitchingTheme = false;
+                themeToggle.classList.remove('is-switching');
+            }, 420);
         });
     }
 })();
